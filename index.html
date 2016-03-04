@@ -1,0 +1,58 @@
+<html ng-app="films">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">
+    <link rel="stylesheet" href="assets\styling\style.css">
+</head>
+
+<body ng-controller="FilmController">
+    <div id="grey" class="panel panel-primary">
+        <div class="panel-heading">
+            <h1>Films</h1>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li ng-repeat="film in films">
+            <h1><span class="glyphicon glyphicon-remove-sign" ng-click="removeItem($index)"></span></h1>
+                    <h1>
+                {{film.name}}
+            </h1>
+                    <h2>
+                {{film.year}}
+            </h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="grey" class="panel panel-primary">
+        <div class="panel-heading">
+            <h1>Submit New Film</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form">
+                <div class="form-group">
+                    <label for="task">Name:</label>
+                    <input class="form-control" type="text" ng-model="newFilm.name" placeholder="Film Name" />
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input class="form-control" type="number" ng-model="newFilm.year" placeholder="Year Released" />
+                </div>
+                <button class="btn btn-success" ng-click="addFilm()">Add Item</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="bower_components\angular\angular.js"></script>
+    <script src="app\app.js"></script>
+    <script src="app\components\films\film-controller.js"></script>
+</body>
+
+</html>
