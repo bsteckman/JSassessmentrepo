@@ -51,7 +51,7 @@ app.controller("FilmController", function($scope){
     $scope.addFilm = function(){
         if($scope.newFilm){
             $scope.films.push($scope.newFilm);
-            $scope.Film = '';
+            $scope.newFilm = '';
         }
     }
     
